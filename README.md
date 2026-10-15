@@ -1,8 +1,6 @@
-# LaunchRadar — TinyFish-powered Job & Internship Finder
+# LaunchRadar — Autonomous Job & Internship Finder
 
-Built for the **TinyFish × TechnoJam Challenge** at Galgotias University.
-
-LaunchRadar is an autonomous job and internship discovery platform that leverages **TinyFish**'s web infrastructure to scan, inspect, rank, and verify authentic employment listings for students and fresh graduates across premier engineering and tech career portals.
+LaunchRadar is an autonomous job and internship discovery platform that scans, inspects, ranks, and verifies authentic employment listings for students and fresh graduates across premier engineering and tech career portals.
 
 ---
 

@@ -4,20 +4,20 @@ import Container from './container';
 
 export default function LandingFooter() {
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950 py-12 text-xs text-slate-500">
+    <footer className="border-t border-yellow-900/40 bg-[#0a0b07] py-12 text-xs text-yellow-100/50">
       <Container className="space-y-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+              <div className="w-6 h-6 rounded-lg bg-yellow-400/20 flex items-center justify-center text-yellow-400">
                 <Radar className="w-3.5 h-3.5" />
               </div>
               <span className="font-bold text-white text-sm">JobAmigo</span>
-              <span className="text-slate-600">/</span>
-              <span className="text-cyan-400 font-medium">LaunchRadar</span>
+              <span className="text-yellow-900/80">/</span>
+              <span className="text-yellow-400 font-medium">LaunchRadar</span>
             </div>
-            <p className="text-xs text-slate-400 max-w-sm">
-              Autonomous job and internship discovery engine built for the TinyFish × TechnoJam challenge at Galgotias University.
+            <p className="text-xs text-yellow-100/60 max-w-sm">
+              Autonomous job and internship discovery engine delivering verified, rank-stable opportunities directly from top company career portals.
             </p>
           </div>
 
@@ -43,28 +43,19 @@ export default function LandingFooter() {
               <span>GitHub</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-            <a
-              href="https://agent.tinyfish.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-white transition-colors"
-            >
-              <span>TinyFish.ai</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+        <div className="pt-6 border-t border-yellow-900/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
           <div>
-            © {new Date().getFullYear()} JobAmigo. Built for TinyFish × TechnoJam @ Galgotias University.
+            © {new Date().getFullYear()} JobAmigo. All rights reserved.
           </div>
-          <div className="flex items-center gap-4 text-slate-500">
-            <span>TinyFish Search</span>
+          <div className="flex items-center gap-4 text-yellow-100/40">
+            <span>Autonomous Search</span>
             <span>•</span>
-            <span>TinyFish Fetch</span>
+            <span>Intelligent Extraction</span>
             <span>•</span>
-            <span>TinyFish Agent</span>
+            <span>Browser Agent</span>
           </div>
         </div>
       </Container>

@@ -1,10 +1,9 @@
-# LaunchRadar — Submission Package & Social Posts
+# LaunchRadar — Autonomous Job & Internship Finder
 
 ## 📌 Project Overview
-- **Name:** LaunchRadar — TinyFish-powered Job & Internship Finder
-- **Event:** TinyFish × TechnoJam Challenge (Galgotias University)
+- **Name:** LaunchRadar — Autonomous Job & Internship Finder
 - **Status:** Complete, production-built, and running live on `http://localhost:3000`
-- **Target Tier:** 200-Point Tier (3 Distinct TinyFish Capabilities)
+- **Architecture:** 3-Tier Autonomous Discovery Pipeline (Search, Fetch, Agent)
 
 ---
 

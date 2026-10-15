@@ -163,24 +163,24 @@ export default function LaunchRadarDashboard() {
       {/* Interactive Search Console Section */}
       <main id="search-console" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full space-y-8 scroll-mt-20">
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-semibold">
-            <Radar className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-950/80 border border-yellow-700/60 text-yellow-300 text-xs font-semibold">
+            <Radar className="w-3.5 h-3.5 text-yellow-400" />
             <span>Interactive Radar Search Console</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Launch Your Custom Search
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400">
-            Configure your target domain, location, and required tech skills to dispatch TinyFish Search, Agent, and Fetch across authentic company career portals.
+          <p className="text-xs sm:text-sm text-yellow-100/60">
+            Configure your target domain, location, and required tech skills to dispatch autonomous search, agent navigation, and DOM fetch across authentic company career portals.
           </p>
         </div>
 
         {/* Preferences & Search Bar */}
-        <section className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-xl shadow-xl space-y-6">
+        <section className="bg-[#14150e]/90 border border-yellow-900/40 rounded-2xl p-6 backdrop-blur-xl shadow-xl space-y-6">
           
           {/* Quick Track Selectors */}
-          <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/60 text-xs">
-            <span className="text-slate-400 font-semibold shrink-0 text-[11px] uppercase tracking-wider">Quick Tracks:</span>
+          <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-yellow-900/30 text-xs">
+            <span className="text-yellow-100/60 font-semibold shrink-0 text-[11px] uppercase tracking-wider">Quick Tracks:</span>
             <button
               type="button"
               onClick={() => {
@@ -189,11 +189,11 @@ export default function LaunchRadarDashboard() {
               }}
               className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 role.toLowerCase().includes('ui') || role.toLowerCase().includes('ux') || role.toLowerCase().includes('design')
-                  ? 'border-pink-500/50 bg-pink-950/40 text-pink-300 shadow-md shadow-pink-950/40'
-                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                  ? 'border-amber-400/60 bg-amber-950/50 text-amber-300 shadow-md shadow-amber-950/40'
+                  : 'border-yellow-900/40 bg-[#0c0d08] text-yellow-100/60 hover:border-yellow-700/60 hover:text-yellow-200'
               }`}
             >
-              <Palette className="w-3.5 h-3.5 text-pink-400" />
+              <Palette className="w-3.5 h-3.5 text-amber-400" />
               <span>UI/UX & Product Design</span>
             </button>
             <button
@@ -204,11 +204,11 @@ export default function LaunchRadarDashboard() {
               }}
               className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 role === 'Software Engineer Intern'
-                  ? 'border-cyan-500/50 bg-cyan-950/40 text-cyan-300 shadow-md shadow-cyan-950/40'
-                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                  ? 'border-yellow-400/60 bg-yellow-950/50 text-yellow-300 shadow-md shadow-yellow-950/40'
+                  : 'border-yellow-900/40 bg-[#0c0d08] text-yellow-100/60 hover:border-yellow-700/60 hover:text-yellow-200'
               }`}
             >
-              <Code className="w-3.5 h-3.5 text-cyan-400" />
+              <Code className="w-3.5 h-3.5 text-yellow-400" />
               <span>Software Engineering</span>
             </button>
             <button
@@ -219,11 +219,11 @@ export default function LaunchRadarDashboard() {
               }}
               className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
                 role === 'AI/ML Intern'
-                  ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-300 shadow-md shadow-emerald-950/40'
-                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                  ? 'border-yellow-300/60 bg-yellow-950/50 text-yellow-300 shadow-md shadow-yellow-950/40'
+                  : 'border-yellow-900/40 bg-[#0c0d08] text-yellow-100/60 hover:border-yellow-700/60 hover:text-yellow-200'
               }`}
             >
-              <Cpu className="w-3.5 h-3.5 text-emerald-400" />
+              <Cpu className="w-3.5 h-3.5 text-yellow-400" />
               <span>AI & Machine Learning</span>
             </button>
           </div>
@@ -231,8 +231,8 @@ export default function LaunchRadarDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Role Input */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
+              <label className="text-xs font-semibold text-yellow-100/80 flex items-center gap-1.5">
+                <Briefcase className="w-3.5 h-3.5 text-yellow-400" />
                 <span>Target Role</span>
               </label>
               <input
@@ -240,7 +240,7 @@ export default function LaunchRadarDashboard() {
                 value={role}
                 onChange={e => setRole(e.target.value)}
                 placeholder="e.g. UI/UX Designer Intern, Product Designer"
-                className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-all"
+                className="w-full bg-[#0a0b07] border border-yellow-900/40 focus:border-yellow-400 rounded-xl px-4 py-2.5 text-sm text-yellow-50 placeholder-yellow-100/30 focus:outline-none focus:ring-1 focus:ring-yellow-400/30 transition-all"
               />
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {['UI/UX Designer Intern', 'Product Designer Intern', 'Software Engineer Intern', 'AI/ML Intern', 'UX Researcher'].map(r => (
@@ -252,7 +252,7 @@ export default function LaunchRadarDashboard() {
                         setKeywords(['Figma', 'UI/UX', 'Wireframing', 'Design Systems', 'User Research']);
                       }
                     }}
-                    className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-[#1a1c12] hover:bg-[#25281a] border border-yellow-900/30 text-yellow-100/70 transition-colors"
                   >
                     {r}
                   </button>
@@ -262,8 +262,8 @@ export default function LaunchRadarDashboard() {
 
             {/* Location Input */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+              <label className="text-xs font-semibold text-yellow-100/80 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-amber-400" />
                 <span>Location</span>
               </label>
               <input
@@ -271,14 +271,14 @@ export default function LaunchRadarDashboard() {
                 value={location}
                 onChange={e => setLocation(e.target.value)}
                 placeholder="e.g. India, Bengaluru, Remote"
-                className="w-full bg-slate-950 border border-slate-800 focus:border-emerald-500 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-all"
+                className="w-full bg-[#0a0b07] border border-yellow-900/40 focus:border-yellow-400 rounded-xl px-4 py-2.5 text-sm text-yellow-50 placeholder-yellow-100/30 focus:outline-none focus:ring-1 focus:ring-yellow-400/30 transition-all"
               />
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {['India', 'Bengaluru', 'Remote', 'Hyderabad', 'Delhi NCR'].map(l => (
                   <button
                     key={l}
                     onClick={() => setLocation(l)}
-                    className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-[#1a1c12] hover:bg-[#25281a] border border-yellow-900/30 text-yellow-100/70 transition-colors"
                   >
                     {l}
                   </button>
@@ -288,44 +288,44 @@ export default function LaunchRadarDashboard() {
 
             {/* Seniority Selector */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Layers className="w-3.5 h-3.5 text-purple-400" />
+              <label className="text-xs font-semibold text-yellow-100/80 flex items-center gap-1.5">
+                <Layers className="w-3.5 h-3.5 text-yellow-400" />
                 <span>Seniority Level</span>
               </label>
               <select
                 value={seniority}
                 onChange={e => setSeniority(e.target.value as SeniorityLevel)}
-                className="w-full bg-slate-950 border border-slate-800 focus:border-purple-500 rounded-xl px-4 py-2.5 text-sm text-slate-100 focus:outline-none transition-all"
+                className="w-full bg-[#0a0b07] border border-yellow-900/40 focus:border-yellow-400 rounded-xl px-4 py-2.5 text-sm text-yellow-50 focus:outline-none focus:ring-1 focus:ring-yellow-400/30 transition-all"
               >
                 <option value="Internship">Internship (College & Undergrad)</option>
                 <option value="Entry Level">Entry Level (0-2 years)</option>
                 <option value="Fresher">Fresher (Campus Graduate)</option>
                 <option value="All">All Opportunities</option>
               </select>
-              <p className="text-[10px] text-slate-500 pt-1">
+              <p className="text-[10px] text-yellow-100/50 pt-1">
                 Filters out experienced mid/senior roles automatically.
               </p>
             </div>
           </div>
 
           {/* Keywords & Action Row */}
-          <div className="pt-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-slate-800/60">
+          <div className="pt-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-yellow-900/30">
             <div className="w-full md:w-2/3 space-y-2">
-              <label className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
+              <label className="text-xs font-semibold text-yellow-100/80 flex items-center gap-1.5">
                 <Code className="w-3.5 h-3.5 text-yellow-400" />
                 <span>Keywords & Tech Stack ({keywords.length})</span>
               </label>
               <div className="flex items-center gap-2">
-                <div className="flex-1 flex flex-wrap items-center gap-1.5 p-2 bg-slate-950 border border-slate-800 rounded-xl min-h-[42px]">
+                <div className="flex-1 flex flex-wrap items-center gap-1.5 p-2 bg-[#0a0b07] border border-yellow-900/40 rounded-xl min-h-[42px]">
                   {keywords.map(kw => (
                     <span
                       key={kw}
-                      className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-lg bg-slate-800/90 text-cyan-300 border border-slate-700"
+                      className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-lg bg-yellow-950/80 text-yellow-300 border border-yellow-800/60"
                     >
                       <span>{kw}</span>
                       <button
                         onClick={() => handleRemoveKeyword(kw)}
-                        className="text-slate-400 hover:text-red-400 ml-0.5"
+                        className="text-yellow-100/50 hover:text-red-400 ml-0.5"
                       >
                         <X className="w-3 h-3" />
                       </button>
@@ -342,19 +342,19 @@ export default function LaunchRadarDashboard() {
                       }
                     }}
                     placeholder={keywords.length === 0 ? "Type skill & hit Enter (e.g. PyTorch)..." : "Add keyword..."}
-                    className="bg-transparent text-xs text-slate-200 placeholder-slate-600 focus:outline-none flex-1 min-w-[120px] px-1"
+                    className="bg-transparent text-xs text-yellow-50 placeholder-yellow-100/30 focus:outline-none flex-1 min-w-[120px] px-1"
                   />
                 </div>
                 <button
                   type="button"
                   onClick={handleAddKeyword}
-                  className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-xs rounded-xl text-slate-300 font-medium transition-colors"
+                  className="px-3 py-2 bg-yellow-950/80 hover:bg-yellow-900/80 border border-yellow-800/60 text-xs rounded-xl text-yellow-300 font-medium transition-colors"
                 >
                   Add
                 </button>
               </div>
               <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                <span className="text-[10px] text-slate-500">Suggested:</span>
+                <span className="text-[10px] text-yellow-100/50">Suggested:</span>
                 {(role.toLowerCase().includes('design') || role.toLowerCase().includes('ux') || role.toLowerCase().includes('ui')
                   ? ['Figma', 'UI/UX', 'Wireframing', 'Prototyping', 'Design Systems', 'User Research', 'Adobe XD']
                   : ['Python', 'Java', 'AI Agents', 'Backend', 'React', 'Docker', 'PyTorch']
@@ -367,7 +367,7 @@ export default function LaunchRadarDashboard() {
                         setKeywords([...keywords, s]);
                       }
                     }}
-                    className="text-[10px] px-2 py-0.5 rounded-md bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-[#14150e] border border-yellow-900/40 hover:border-yellow-700/60 text-yellow-100/60 hover:text-yellow-200 transition-colors"
                   >
                     + {s}
                   </button>
@@ -379,11 +379,11 @@ export default function LaunchRadarDashboard() {
               <button
                 onClick={triggerSearch}
                 disabled={loading}
-                className="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/25 transition-all disabled:opacity-50"
+                className="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 hover:from-yellow-300 hover:to-amber-400 text-neutral-950 font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/25 transition-all disabled:opacity-50"
               >
                 {loading ? (
                   <>
-                    <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
+                    <RefreshCw className="w-4 h-4 animate-spin text-neutral-950" />
                     <span>Executing Pipeline...</span>
                   </>
                 ) : (
@@ -398,30 +398,30 @@ export default function LaunchRadarDashboard() {
 
           {/* Active Pipeline Progress Tracker */}
           {loading && (
-            <div className="p-4 rounded-xl bg-slate-950 border border-cyan-500/30 animate-pulse space-y-3">
+            <div className="p-4 rounded-xl bg-[#0a0b07] border border-yellow-500/30 animate-pulse space-y-3">
               <div className="flex items-center justify-between text-xs">
-                <span className="font-semibold text-cyan-400 flex items-center gap-2">
+                <span className="font-semibold text-yellow-400 flex items-center gap-2">
                   <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                  Running TinyFish Autonomous Pipeline...
+                  Running Autonomous Discovery Pipeline...
                 </span>
-                <span className="text-slate-400">Targeting {sources.length || 5} career portals</span>
+                <span className="text-yellow-100/60">Targeting {sources.length || 5} career portals</span>
               </div>
               <div className="grid grid-cols-4 gap-2 text-[11px]">
-                <div className="p-2 rounded-lg bg-cyan-950/60 border border-cyan-800/80 text-cyan-300">
-                  <div className="font-bold">1. TinyFish Search</div>
-                  <div className="text-[10px] text-cyan-400/80">Querying live SERP</div>
+                <div className="p-2 rounded-lg bg-yellow-950/60 border border-yellow-700/60 text-yellow-300">
+                  <div className="font-bold">1. Web Discovery</div>
+                  <div className="text-[10px] text-yellow-400/80">Querying live SERP</div>
                 </div>
-                <div className="p-2 rounded-lg bg-purple-950/60 border border-purple-800/80 text-purple-300">
-                  <div className="font-bold">2. TinyFish Agent</div>
-                  <div className="text-[10px] text-purple-400/80">Autonomous portal run</div>
+                <div className="p-2 rounded-lg bg-amber-950/60 border border-amber-700/60 text-amber-300">
+                  <div className="font-bold">2. Autonomous Agent</div>
+                  <div className="text-[10px] text-amber-400/80">Autonomous portal run</div>
                 </div>
-                <div className="p-2 rounded-lg bg-emerald-950/60 border border-emerald-800/80 text-emerald-300">
-                  <div className="font-bold">3. TinyFish Fetch</div>
-                  <div className="text-[10px] text-emerald-400/80">Extracting DOM text</div>
+                <div className="p-2 rounded-lg bg-yellow-950/60 border border-yellow-700/60 text-yellow-300">
+                  <div className="font-bold">3. DOM Fetch</div>
+                  <div className="text-[10px] text-yellow-400/80">Extracting DOM text</div>
                 </div>
-                <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+                <div className="p-2 rounded-lg bg-[#14150e] border border-yellow-900/40 text-yellow-200">
                   <div className="font-bold">4. Deterministic Match</div>
-                  <div className="text-[10px] text-slate-400">Scoring & deduping</div>
+                  <div className="text-[10px] text-yellow-100/60">Scoring & deduping</div>
                 </div>
               </div>
             </div>
@@ -430,71 +430,71 @@ export default function LaunchRadarDashboard() {
 
         {/* Diagnostics Drawer (Collapsible) */}
         {showDiagnostics && (
-          <section className="bg-slate-900/90 border border-cyan-500/30 rounded-2xl p-6 space-y-4 backdrop-blur-xl">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+          <section className="bg-[#14150e]/95 border border-yellow-500/30 rounded-2xl p-6 space-y-4 backdrop-blur-xl">
+            <div className="flex items-center justify-between border-b border-yellow-900/40 pb-3">
               <div className="flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-cyan-400" />
-                <h3 className="font-bold text-sm text-slate-100">Live TinyFish Endpoint Diagnostics</h3>
+                <Cpu className="w-4 h-4 text-yellow-400" />
+                <h3 className="font-bold text-sm text-yellow-100">Live Endpoint Diagnostics</h3>
               </div>
               <button
                 onClick={() => setShowDiagnostics(false)}
-                className="text-slate-400 hover:text-white"
+                className="text-yellow-100/60 hover:text-white"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <p className="text-xs text-slate-400">
-              Directly verify the live response and HTTP contracts for all three TinyFish API primitives.
+            <p className="text-xs text-yellow-100/60">
+              Directly verify the live response and HTTP contracts for all three autonomous search API primitives.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Test Search */}
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="p-4 rounded-xl bg-[#0a0b07] border border-yellow-900/40 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-xs text-cyan-400">api.search.tinyfish.ai</span>
+                  <span className="font-semibold text-xs text-yellow-400">api.search.tinyfish.ai</span>
                   <button
                     onClick={() => runDiagnostic('search')}
                     disabled={diagTesting.search}
-                    className="text-[10px] px-2 py-1 rounded bg-cyan-950 border border-cyan-800 text-cyan-300 hover:bg-cyan-900 transition-colors"
+                    className="text-[10px] px-2 py-1 rounded bg-yellow-950/80 border border-yellow-800 text-yellow-300 hover:bg-yellow-900 transition-colors"
                   >
                     {diagTesting.search ? 'Testing...' : 'Test Search'}
                   </button>
                 </div>
-                <div className="text-[11px] text-slate-400 font-mono overflow-x-auto bg-slate-900 p-2 rounded max-h-28">
+                <div className="text-[11px] text-yellow-100/60 font-mono overflow-x-auto bg-[#14150e] p-2 rounded max-h-28">
                   {diagResults.search ? JSON.stringify(diagResults.search, null, 2) : 'Click Test Search to query endpoint'}
                 </div>
               </div>
 
               {/* Test Fetch */}
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="p-4 rounded-xl bg-[#0a0b07] border border-yellow-900/40 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-xs text-emerald-400">api.fetch.tinyfish.ai</span>
+                  <span className="font-semibold text-xs text-amber-400">api.fetch.tinyfish.ai</span>
                   <button
                     onClick={() => runDiagnostic('fetch')}
                     disabled={diagTesting.fetch}
-                    className="text-[10px] px-2 py-1 rounded bg-emerald-950 border border-emerald-800 text-emerald-300 hover:bg-emerald-900 transition-colors"
+                    className="text-[10px] px-2 py-1 rounded bg-amber-950/80 border border-amber-800 text-amber-300 hover:bg-amber-900 transition-colors"
                   >
                     {diagTesting.fetch ? 'Testing...' : 'Test Fetch'}
                   </button>
                 </div>
-                <div className="text-[11px] text-slate-400 font-mono overflow-x-auto bg-slate-900 p-2 rounded max-h-28">
+                <div className="text-[11px] text-yellow-100/60 font-mono overflow-x-auto bg-[#14150e] p-2 rounded max-h-28">
                   {diagResults.fetch ? JSON.stringify(diagResults.fetch, null, 2) : 'Click Test Fetch to render URL'}
                 </div>
               </div>
 
               {/* Test Agent */}
-              <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+              <div className="p-4 rounded-xl bg-[#0a0b07] border border-yellow-900/40 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-xs text-purple-400">agent.tinyfish.ai</span>
+                  <span className="font-semibold text-xs text-yellow-300">agent.tinyfish.ai</span>
                   <button
                     onClick={() => runDiagnostic('agent')}
                     disabled={diagTesting.agent}
-                    className="text-[10px] px-2 py-1 rounded bg-purple-950 border border-purple-800 text-purple-300 hover:bg-purple-900 transition-colors"
+                    className="text-[10px] px-2 py-1 rounded bg-yellow-950/80 border border-yellow-800 text-yellow-300 hover:bg-yellow-900 transition-colors"
                   >
                     {diagTesting.agent ? 'Testing...' : 'Test Agent'}
                   </button>
                 </div>
-                <div className="text-[11px] text-slate-400 font-mono overflow-x-auto bg-slate-900 p-2 rounded max-h-28">
+                <div className="text-[11px] text-yellow-100/60 font-mono overflow-x-auto bg-[#14150e] p-2 rounded max-h-28">
                   {diagResults.agent ? JSON.stringify(diagResults.agent, null, 2) : 'Click Test Agent to run browser goal'}
                 </div>
               </div>
@@ -504,29 +504,29 @@ export default function LaunchRadarDashboard() {
 
         {/* Results Metadata Bar */}
         {(stats || error) && (
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 py-3 rounded-xl bg-slate-900/40 border border-slate-800/80 text-xs">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-4 py-3 rounded-xl bg-[#14150e]/60 border border-yellow-900/40 text-xs">
             <div className="flex items-center gap-4">
-              <span className="font-semibold text-slate-200">
-                Found <span className="text-cyan-400 font-bold">{results.length}</span> verified listings
+              <span className="font-semibold text-yellow-100">
+                Found <span className="text-yellow-400 font-bold">{results.length}</span> verified listings
               </span>
               {stats && (
                 <>
-                  <span className="text-slate-500">•</span>
-                  <span className="text-slate-400">
+                  <span className="text-yellow-900/80">•</span>
+                  <span className="text-yellow-100/60">
                     Discovered: {stats.totalDiscovered} ({stats.deduplicatedCount} duplicates filtered)
                   </span>
-                  <span className="text-slate-500 hidden md:inline">•</span>
-                  <span className="text-slate-400 hidden md:inline">
+                  <span className="text-yellow-900/80 hidden md:inline">•</span>
+                  <span className="text-yellow-100/60 hidden md:inline">
                     Latency: {stats.executionTimeMs}ms
                   </span>
                 </>
               )}
             </div>
 
-            <div className="flex items-center gap-2 text-slate-400 text-[11px]">
+            <div className="flex items-center gap-2 text-yellow-100/60 text-[11px]">
               <span>Sources:</span>
               {(sources.length > 0 ? sources : ['Microsoft', 'Amazon', 'Wellfound', 'Greenhouse']).map(s => (
-                <span key={s} className="px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+                <span key={s} className="px-2 py-0.5 rounded bg-[#1c1d14] border border-yellow-900/40 text-yellow-200/80">
                   {s}
                 </span>
               ))}
@@ -539,10 +539,10 @@ export default function LaunchRadarDashboard() {
           <div className="p-4 rounded-xl bg-amber-950/40 border border-amber-600/40 text-amber-200 text-xs flex items-start gap-3">
             <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <div className="font-semibold text-amber-300">TinyFish Integration Notice</div>
+              <div className="font-semibold text-amber-300">Discovery Engine Notice</div>
               <div>{error}</div>
               <div className="text-[11px] text-amber-400/80 pt-1">
-                Tip: Click <strong>"Configure TinyFish Key"</strong> above to enter your key or add it to <code className="bg-amber-900/60 px-1 py-0.5 rounded">.env.local</code>.
+                Tip: Click <strong>"Configure Engine Key"</strong> above to enter your key or add it to <code className="bg-amber-900/60 px-1 py-0.5 rounded">.env.local</code>.
               </div>
             </div>
           </div>
@@ -550,21 +550,21 @@ export default function LaunchRadarDashboard() {
 
         {/* Empty State */}
         {!loading && results.length === 0 && !error && (
-          <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-slate-800 bg-slate-900/20 space-y-4">
-            <div className="w-12 h-12 mx-auto rounded-full bg-slate-800/60 flex items-center justify-center text-slate-500">
+          <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-yellow-900/40 bg-[#14150e]/30 space-y-4">
+            <div className="w-12 h-12 mx-auto rounded-full bg-yellow-950/40 border border-yellow-900/40 flex items-center justify-center text-yellow-400/80">
               <Radar className="w-6 h-6" />
             </div>
             <div className="space-y-1">
-              <h3 className="text-base font-semibold text-slate-300">Ready to Scan Career Portals</h3>
-              <p className="text-xs text-slate-500 max-w-md mx-auto">
+              <h3 className="text-base font-semibold text-yellow-100">Ready to Scan Career Portals</h3>
+              <p className="text-xs text-yellow-100/60 max-w-md mx-auto">
                 Configure your target role, preferred city or remote status, and skills above, then click Launch Radar Search.
               </p>
             </div>
             <button
               onClick={triggerSearch}
-              className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-medium rounded-xl text-slate-300 inline-flex items-center gap-2 transition-colors"
+              className="px-4 py-2 bg-yellow-950/80 hover:bg-yellow-900/80 border border-yellow-800/60 text-xs font-semibold rounded-xl text-yellow-300 inline-flex items-center gap-2 transition-colors"
             >
-              <Search className="w-3.5 h-3.5 text-cyan-400" />
+              <Search className="w-3.5 h-3.5 text-yellow-400" />
               <span>Run Initial Search</span>
             </button>
           </div>
@@ -574,15 +574,15 @@ export default function LaunchRadarDashboard() {
         {results.length > 0 && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+              <h2 className="text-sm font-bold text-yellow-100 uppercase tracking-wider flex items-center gap-2">
                 <span>Ranked Matches</span>
-                <span className="text-[10px] font-normal normal-case px-2 py-0.5 rounded bg-slate-800 text-slate-400">
+                <span className="text-[10px] font-normal normal-case px-2 py-0.5 rounded bg-[#1c1d14] border border-yellow-900/40 text-yellow-200/80">
                   Deterministic relevance scoring
                 </span>
               </h2>
               <button
                 onClick={triggerSearch}
-                className="text-xs text-slate-400 hover:text-cyan-400 flex items-center gap-1 transition-colors"
+                className="text-xs text-yellow-100/60 hover:text-yellow-400 flex items-center gap-1 transition-colors"
               >
                 <RefreshCw className="w-3 h-3" />
                 <span>Refresh</span>
@@ -594,51 +594,51 @@ export default function LaunchRadarDashboard() {
                 const isExpanded = expandedListingId === job.id;
                 const scoreColor =
                   job.matchScore >= 80
-                    ? 'text-emerald-400 border-emerald-500/30 bg-emerald-950/40'
+                    ? 'text-yellow-300 border-yellow-500/40 bg-yellow-950/60'
                     : job.matchScore >= 60
-                    ? 'text-cyan-400 border-cyan-500/30 bg-cyan-950/40'
-                    : 'text-amber-400 border-amber-500/30 bg-amber-950/40';
+                    ? 'text-amber-400 border-amber-500/40 bg-amber-950/60'
+                    : 'text-yellow-500 border-yellow-600/40 bg-yellow-950/40';
 
                 return (
                   <article
                     key={job.id}
-                    className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/80 transition-all backdrop-blur-md shadow-lg space-y-4"
+                    className="p-5 rounded-2xl bg-[#14150e]/90 border border-yellow-900/40 hover:border-yellow-500/50 hover:shadow-lg hover:shadow-yellow-500/5 transition-all backdrop-blur-md shadow-md space-y-4"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                       {/* Left Title & Company */}
                       <div className="space-y-1.5 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-bold text-base text-white hover:text-cyan-300 transition-colors">
+                          <span className="font-bold text-base text-yellow-50 hover:text-yellow-400 transition-colors">
                             {job.title}
                           </span>
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 font-medium">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-[#1c1d14] border border-yellow-900/50 text-yellow-200/80 font-medium">
                             {job.employmentType}
                           </span>
                           {job.provenance.verifiedViaFetch && (
-                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-800 text-emerald-300 font-medium flex items-center gap-1">
-                              <CheckCircle2 className="w-2.5 h-2.5" />
-                              <span>TinyFish Fetch Verified</span>
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-yellow-950/80 border border-yellow-700/60 text-yellow-300 font-medium flex items-center gap-1">
+                              <CheckCircle2 className="w-2.5 h-2.5 text-yellow-400" />
+                              <span>Live Portal Verified</span>
                             </span>
                           )}
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-                          <span className="font-semibold text-slate-200">{job.company}</span>
+                        <div className="flex flex-wrap items-center gap-3 text-xs text-yellow-100/60">
+                          <span className="font-semibold text-yellow-100">{job.company}</span>
                           <span>•</span>
                           <span className="flex items-center gap-1">
-                            <MapPin className="w-3 h-3 text-slate-500" />
+                            <MapPin className="w-3 h-3 text-yellow-500/70" />
                             {job.location}
                           </span>
                           <span>•</span>
                           <span className="flex items-center gap-1">
-                            <Globe className="w-3 h-3 text-slate-500" />
+                            <Globe className="w-3 h-3 text-yellow-500/70" />
                             {job.sourceWebsite}
                           </span>
                           {job.postedDate && (
                             <>
                               <span>•</span>
                               <span className="flex items-center gap-1">
-                                <Clock className="w-3 h-3 text-slate-500" />
+                                <Clock className="w-3 h-3 text-yellow-500/70" />
                                 {job.postedDate}
                               </span>
                             </>
@@ -656,7 +656,7 @@ export default function LaunchRadarDashboard() {
                           href={job.directApplyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-3.5 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                          className="px-3.5 py-1.5 rounded-xl bg-yellow-400/10 hover:bg-yellow-400/20 text-yellow-300 border border-yellow-500/30 text-xs font-semibold flex items-center gap-1.5 transition-colors"
                         >
                           <span>Apply Directly</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -665,18 +665,18 @@ export default function LaunchRadarDashboard() {
                     </div>
 
                     {/* Short Description */}
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="text-xs text-yellow-100/70 leading-relaxed">
                       {job.shortDescription}
                     </p>
 
                     {/* Skills & Match Explanation Toggle */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-slate-800/60">
+                    <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-yellow-900/30">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-[11px] text-slate-500 mr-1">Skills:</span>
+                        <span className="text-[11px] text-yellow-100/50 mr-1">Skills:</span>
                         {job.requiredSkills.map(skill => (
                           <span
                             key={skill}
-                            className="text-[10px] px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-300"
+                            className="text-[10px] px-2 py-0.5 rounded-md bg-[#0a0b07] border border-yellow-900/40 text-yellow-200/80"
                           >
                             {skill}
                           </span>
@@ -685,7 +685,7 @@ export default function LaunchRadarDashboard() {
 
                       <button
                         onClick={() => setExpandedListingId(isExpanded ? null : job.id)}
-                        className="text-[11px] text-cyan-400 hover:text-cyan-300 flex items-center gap-1 transition-colors"
+                        className="text-[11px] text-yellow-400 hover:text-yellow-300 flex items-center gap-1 transition-colors"
                       >
                         <span>{isExpanded ? 'Hide Match Reasons' : 'Why this matches'}</span>
                         {isExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
@@ -694,17 +694,17 @@ export default function LaunchRadarDashboard() {
 
                     {/* Expanded Match Breakdown */}
                     {isExpanded && (
-                      <div className="mt-3 p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2 text-xs">
-                        <div className="font-semibold text-slate-200 flex items-center gap-1.5">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                      <div className="mt-3 p-3.5 rounded-xl bg-[#0a0b07]/90 border border-yellow-900/40 space-y-2 text-xs">
+                        <div className="font-semibold text-yellow-100 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-yellow-400" />
                           <span>Deterministic Match Breakdown ({job.matchScore} / 100)</span>
                         </div>
-                        <ul className="space-y-1 text-[11px] text-slate-400 pl-5 list-disc">
+                        <ul className="space-y-1 text-[11px] text-yellow-100/60 pl-5 list-disc">
                           {job.matchExplanation.reasons.map((r, i) => (
                             <li key={i}>{r}</li>
                           ))}
                         </ul>
-                        <div className="grid grid-cols-4 gap-2 pt-2 text-[10px] text-slate-500 font-mono">
+                        <div className="grid grid-cols-4 gap-2 pt-2 text-[10px] text-yellow-100/50 font-mono">
                           <div>Role: {job.matchExplanation.roleScore}/35</div>
                           <div>Location: {job.matchExplanation.locationScore}/25</div>
                           <div>Seniority: {job.matchExplanation.seniorityScore}/25</div>
@@ -722,36 +722,27 @@ export default function LaunchRadarDashboard() {
 
       {/* API Key Modal */}
       {showKeyModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070805]/80 backdrop-blur-sm">
+          <div className="bg-[#14150e] border border-yellow-900/50 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Key className="w-5 h-5 text-cyan-400" />
-                <h3 className="font-bold text-base text-white">Configure TinyFish API Key</h3>
+                <Key className="w-5 h-5 text-yellow-400" />
+                <h3 className="font-bold text-base text-white">Configure Engine API Key</h3>
               </div>
               <button
                 onClick={() => setShowKeyModal(false)}
-                className="text-slate-400 hover:text-white"
+                className="text-yellow-100/60 hover:text-white"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <p className="text-xs text-slate-400 leading-relaxed">
-              Generate your free TinyFish API key at{' '}
-              <a
-                href="https://agent.tinyfish.ai/api-keys"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-cyan-400 underline hover:text-cyan-300"
-              >
-                agent.tinyfish.ai/api-keys
-              </a>
-              . Your key is stored solely in memory for your session and never logged or exposed.
+            <p className="text-xs text-yellow-100/60 leading-relaxed">
+              Enter your API credentials to power live autonomous search and browser fetch. Your key is stored solely in memory for your session and never logged or exposed.
             </p>
 
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-slate-300">
+              <label className="text-xs font-semibold text-yellow-100/80">
                 X-API-Key
               </label>
               <input
@@ -759,14 +750,14 @@ export default function LaunchRadarDashboard() {
                 value={apiKey}
                 onChange={e => setApiKey(e.target.value)}
                 placeholder="tf_live_..."
-                className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none font-mono"
+                className="w-full bg-[#0a0b07] border border-yellow-900/40 focus:border-yellow-400 rounded-xl px-4 py-2.5 text-sm text-yellow-50 placeholder-yellow-100/30 focus:outline-none focus:ring-1 focus:ring-yellow-400/30 font-mono"
               />
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] text-slate-400 flex items-start gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <div className="p-3 rounded-xl bg-[#0a0b07] border border-yellow-900/40 text-[11px] text-yellow-100/60 flex items-start gap-2">
+              <ShieldCheck className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
               <span>
-                Alternatively, you can set <code className="text-slate-200">TINYFISH_API_KEY</code> in <code className="text-slate-200">.env.local</code> in the workspace.
+                Alternatively, you can set <code className="text-yellow-200">TINYFISH_API_KEY</code> in <code className="text-yellow-200">.env.local</code> in the workspace.
               </span>
             </div>
 
@@ -774,7 +765,7 @@ export default function LaunchRadarDashboard() {
               <button
                 type="button"
                 onClick={() => setShowKeyModal(false)}
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 transition-colors"
+                className="px-4 py-2 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-xs font-bold text-neutral-950 transition-colors"
               >
                 Done
               </button>

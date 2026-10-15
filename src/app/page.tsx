@@ -23,7 +23,8 @@ import {
   Key,
   X,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Palette
 } from 'lucide-react';
 import { JobListing, SearchPreferences, SeniorityLevel } from '@/lib/types';
 
@@ -229,6 +230,57 @@ export default function LaunchRadarDashboard() {
 
         {/* Preferences & Search Bar */}
         <section className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-xl shadow-xl space-y-6">
+          
+          {/* Quick Track Selectors */}
+          <div className="flex flex-wrap items-center gap-2 pb-2 border-b border-slate-800/60 text-xs">
+            <span className="text-slate-400 font-semibold shrink-0 text-[11px] uppercase tracking-wider">Quick Tracks:</span>
+            <button
+              type="button"
+              onClick={() => {
+                setRole('UI/UX Designer Intern');
+                setKeywords(['Figma', 'UI/UX', 'Wireframing', 'Design Systems', 'User Research']);
+              }}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                role.toLowerCase().includes('ui') || role.toLowerCase().includes('ux') || role.toLowerCase().includes('design')
+                  ? 'border-pink-500/50 bg-pink-950/40 text-pink-300 shadow-md shadow-pink-950/40'
+                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+              }`}
+            >
+              <Palette className="w-3.5 h-3.5 text-pink-400" />
+              <span>UI/UX & Product Design</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setRole('Software Engineer Intern');
+                setKeywords(['Python', 'Java', 'AI Agents', 'Backend']);
+              }}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                role === 'Software Engineer Intern'
+                  ? 'border-cyan-500/50 bg-cyan-950/40 text-cyan-300 shadow-md shadow-cyan-950/40'
+                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+              }`}
+            >
+              <Code className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Software Engineering</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setRole('AI/ML Intern');
+                setKeywords(['Python', 'PyTorch', 'LLMs', 'Computer Vision']);
+              }}
+              className={`px-3 py-1.5 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all ${
+                role === 'AI/ML Intern'
+                  ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-300 shadow-md shadow-emerald-950/40'
+                  : 'border-slate-800 bg-slate-950/80 text-slate-400 hover:border-slate-700 hover:text-slate-200'
+              }`}
+            >
+              <Cpu className="w-3.5 h-3.5 text-emerald-400" />
+              <span>AI & Machine Learning</span>
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Role Input */}
             <div className="space-y-2">
@@ -240,14 +292,19 @@ export default function LaunchRadarDashboard() {
                 type="text"
                 value={role}
                 onChange={e => setRole(e.target.value)}
-                placeholder="e.g. AI/ML Intern, Backend Developer"
+                placeholder="e.g. UI/UX Designer Intern, Product Designer"
                 className="w-full bg-slate-950 border border-slate-800 focus:border-cyan-500 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none transition-all"
               />
               <div className="flex flex-wrap gap-1.5 pt-1">
-                {['AI/ML Intern', 'Software Engineer Intern', 'Backend Developer', 'Data Science Intern'].map(r => (
+                {['UI/UX Designer Intern', 'Product Designer Intern', 'Software Engineer Intern', 'AI/ML Intern', 'UX Researcher'].map(r => (
                   <button
                     key={r}
-                    onClick={() => setRole(r)}
+                    onClick={() => {
+                      setRole(r);
+                      if (r.toLowerCase().includes('design') || r.toLowerCase().includes('ux')) {
+                        setKeywords(['Figma', 'UI/UX', 'Wireframing', 'Design Systems', 'User Research']);
+                      }
+                    }}
                     className="text-[10px] px-2 py-0.5 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
                   >
                     {r}
@@ -348,6 +405,26 @@ export default function LaunchRadarDashboard() {
                 >
                   Add
                 </button>
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                <span className="text-[10px] text-slate-500">Suggested:</span>
+                {(role.toLowerCase().includes('design') || role.toLowerCase().includes('ux') || role.toLowerCase().includes('ui')
+                  ? ['Figma', 'UI/UX', 'Wireframing', 'Prototyping', 'Design Systems', 'User Research', 'Adobe XD']
+                  : ['Python', 'Java', 'AI Agents', 'Backend', 'React', 'Docker', 'PyTorch']
+                ).map(s => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => {
+                      if (!keywords.includes(s)) {
+                        setKeywords([...keywords, s]);
+                      }
+                    }}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+                  >
+                    + {s}
+                  </button>
+                ))}
               </div>
             </div>
 

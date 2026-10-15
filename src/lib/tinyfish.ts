@@ -34,12 +34,21 @@ export class TinyFishService {
     const seniority = prefs.seniority === 'All' ? '' : prefs.seniority;
     const kw = (prefs.keywords || []).slice(0, 3).join(' ');
 
-    const queries = [
-      `site:careers.microsoft.com "${role}" ${loc}`,
-      `site:amazon.jobs "${role}" ${loc}`,
-      `site:wellfound.com/jobs "${role}" ${loc}`,
-      `site:boards.greenhouse.io OR site:jobs.lever.co "${role}" ${loc} ${seniority}`
-    ];
+    const isDesign = role.toLowerCase().includes('ui') || role.toLowerCase().includes('ux') || role.toLowerCase().includes('design');
+
+    const queries = isDesign
+      ? [
+          `site:wellfound.com/jobs "${role}" ${loc}`,
+          `site:dribbble.com/jobs "${role}" ${loc}`,
+          `site:careers.microsoft.com "${role}" ${loc}`,
+          `site:boards.greenhouse.io OR site:jobs.lever.co "${role}" ${loc} ${seniority}`
+        ]
+      : [
+          `site:careers.microsoft.com "${role}" ${loc}`,
+          `site:amazon.jobs "${role}" ${loc}`,
+          `site:wellfound.com/jobs "${role}" ${loc}`,
+          `site:boards.greenhouse.io OR site:jobs.lever.co "${role}" ${loc} ${seniority}`
+        ];
 
     if (!this.hasKey()) {
       return {
@@ -354,7 +363,8 @@ export class TinyFishService {
       'Amazon Jobs',
       'Wellfound',
       'Greenhouse',
-      'Lever'
+      'Lever',
+      'Dribbble'
     ]);
 
     // 1 & 2. Run TinyFish Search and TinyFish Agent in parallel for speed
@@ -384,6 +394,7 @@ export class TinyFishService {
       if (domain.includes('microsoft')) company = 'Microsoft';
       else if (domain.includes('amazon')) company = 'Amazon';
       else if (domain.includes('wellfound')) company = 'Wellfound Startups';
+      else if (domain.includes('dribbble')) company = 'Dribbble Hiring';
 
       const unrankedListing: Omit<JobListing, 'matchScore' | 'matchExplanation'> = {
         id: `srch-${Buffer.from(item.url).toString('base64').slice(0, 12)}`,

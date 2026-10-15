@@ -81,6 +81,14 @@ export function scoreListing(
         reasons.push(`Target role mentioned in description: +15%`);
       }
     }
+
+    // UI/UX domain alignment & synonym matching
+    const isUiUxTarget = targetRole.includes('ui') || targetRole.includes('ux') || targetRole.includes('design');
+    const isUiUxListing = titleLower.includes('ui') || titleLower.includes('ux') || titleLower.includes('product design') || titleLower.includes('interaction design') || titleLower.includes('user experience') || titleLower.includes('user interface');
+    if (isUiUxTarget && isUiUxListing && roleScore < 30) {
+      roleScore = Math.max(roleScore, 30);
+      reasons.push(`UI/UX & Product Design domain alignment (+30%)`);
+    }
   } else {
     roleScore = 30; // neutral default
   }

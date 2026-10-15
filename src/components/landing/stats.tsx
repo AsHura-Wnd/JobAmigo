@@ -35,7 +35,7 @@ export default function LandingStats() {
   ];
 
   return (
-    <section id="stats" className="py-12 border-b border-yellow-100 bg-yellow-50/40">
+    <section id="stats" className="py-12 border-b border-stone-200/80 dark:border-stone-800 bg-transparent transition-colors">
       <Container>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, i) => {
@@ -43,18 +43,18 @@ export default function LandingStats() {
             return (
               <div
                 key={i}
-                className="p-5 rounded-2xl bg-white border border-yellow-200 hover:border-yellow-400 hover:shadow-md transition-all shadow-sm"
+                className="p-5 rounded-2xl inverted-card border shadow-md hover:scale-[1.02] transition-all"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-2xl sm:text-3xl font-black tracking-tight ${stat.color}`}>
                     {stat.value}
                   </span>
-                  <div className="w-8 h-8 rounded-lg bg-yellow-100 border border-yellow-300 flex items-center justify-center text-yellow-700">
+                  <div className="w-8 h-8 rounded-lg bg-yellow-400/20 border border-yellow-400/40 flex items-center justify-center text-yellow-500">
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
-                <div className="font-semibold text-xs text-stone-900">{stat.label}</div>
-                <div className="text-[11px] text-stone-500 mt-0.5">{stat.sub}</div>
+                <div className="font-semibold text-xs tracking-tight">{stat.label}</div>
+                <div className="text-[11px] card-text-muted mt-0.5">{stat.sub}</div>
               </div>
             );
           })}

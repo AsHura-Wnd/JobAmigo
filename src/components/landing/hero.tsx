@@ -41,13 +41,13 @@ export default function LandingHero({
   };
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-yellow-100 bg-white">
+    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-stone-200/80 dark:border-stone-800 bg-transparent transition-colors">
       {/* Warm Banana Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[360px] bg-gradient-to-tr from-yellow-200/50 via-amber-100/40 to-yellow-300/30 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[360px] bg-gradient-to-tr from-yellow-200/40 dark:from-yellow-500/10 via-amber-100/30 dark:via-amber-500/10 to-yellow-300/20 dark:to-yellow-400/5 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-      {/* Subtle Warm Grid Accent */}
+      {/* Subtle Grid Accent */}
       <div 
-        className="absolute inset-0 opacity-[0.12] pointer-events-none -z-10"
+        className="absolute inset-0 opacity-[0.08] dark:opacity-[0.05] pointer-events-none -z-10"
         style={{
           backgroundImage: 'radial-gradient(circle at 1px 1px, #eab308 1px, transparent 0)',
           backgroundSize: '32px 32px'
@@ -56,26 +56,26 @@ export default function LandingHero({
 
       <Container className="text-center relative z-10 space-y-6 max-w-4xl">
         {/* Top Product Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-50 border border-yellow-300 text-xs text-yellow-900 shadow-sm backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-950/60 border border-yellow-300 dark:border-yellow-700/80 text-xs text-yellow-900 dark:text-yellow-300 shadow-sm backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-yellow-500 animate-ping" />
-          <span className="font-semibold text-yellow-900">Autonomous Radar Engine</span>
-          <span className="text-yellow-600">•</span>
-          <span className="text-yellow-700">Live Job & Internship Discovery</span>
+          <span className="font-semibold text-yellow-900 dark:text-yellow-300">Autonomous Radar Engine</span>
+          <span className="text-yellow-600 dark:text-yellow-500">•</span>
+          <span className="text-yellow-700 dark:text-yellow-400">Live Job & Internship Discovery</span>
         </div>
 
         {/* Main Headline with Dynamic Role Rotation */}
         <Heading as="h1" variant="big" className="leading-[1.15]">
           Verified tech opportunities for{' '}
           <span className="inline-block relative min-w-[280px] sm:min-w-[360px] text-left transition-all">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 font-black">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-500 dark:from-yellow-400 dark:via-amber-300 dark:to-yellow-400 font-black">
               {ROTATING_ROLES[roleIndex]}
             </span>
           </span>
         </Heading>
 
         {/* Concise Value Proposition */}
-        <SubHeading variant="big" className="max-w-2xl mx-auto text-stone-600">
-          JobAmigo combines autonomous <strong className="text-yellow-800 font-semibold">Search</strong>, <strong className="text-amber-800 font-semibold">DOM Extraction</strong>, and <strong className="text-yellow-800 font-semibold">Browser Agent</strong> infrastructure to discover real openings across top career portals with deterministic matching.
+        <SubHeading variant="big" className="max-w-2xl mx-auto">
+          JobAmigo combines autonomous <strong className="text-yellow-700 dark:text-yellow-400 font-semibold">Search</strong>, <strong className="text-amber-700 dark:text-amber-400 font-semibold">DOM Extraction</strong>, and <strong className="text-yellow-700 dark:text-yellow-400 font-semibold">Browser Agent</strong> infrastructure to discover real openings across top career portals with deterministic matching.
         </SubHeading>
 
         {/* Prominent Banana CTAs */}
@@ -92,25 +92,25 @@ export default function LandingHero({
 
           <a
             href="#workflow"
-            className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-yellow-50 border border-stone-200 hover:border-yellow-300 text-stone-800 text-sm font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors"
+            className="w-full sm:w-auto px-6 py-3.5 rounded-xl inverted-card border text-sm font-semibold flex items-center justify-center gap-2 shadow-sm"
           >
-            <Layers className="w-4 h-4 text-yellow-600" />
+            <Layers className="w-4 h-4 text-yellow-500" />
             <span>How It Works</span>
           </a>
         </div>
 
         {/* Trusted Career Portals Banner */}
-        <div className="pt-8 flex flex-col items-center gap-3 text-xs text-stone-500">
-          <span className="uppercase tracking-widest text-[10px] font-semibold text-stone-600">
+        <div className="pt-8 flex flex-col items-center gap-3 text-xs text-stone-500 dark:text-stone-400">
+          <span className="uppercase tracking-widest text-[10px] font-semibold text-stone-500 dark:text-stone-400">
             Real Career Portals Scanned in Real-Time
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-stone-700 text-xs font-medium">
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Microsoft Careers</span>
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Amazon Jobs</span>
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Wellfound Startups</span>
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Greenhouse Boards</span>
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Lever Portals</span>
-            <span className="px-3 py-1 rounded-lg bg-white border border-stone-200 hover:border-yellow-400 shadow-sm transition-colors">Dribbble Design</span>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-medium">
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Microsoft Careers</span>
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Amazon Jobs</span>
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Wellfound Startups</span>
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Greenhouse Boards</span>
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Lever Portals</span>
+            <span className="px-3 py-1 rounded-lg inverted-card border shadow-sm">Dribbble Design</span>
           </div>
         </div>
       </Container>

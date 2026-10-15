@@ -19,7 +19,7 @@ export default function Heading({
   };
 
   return (
-    <Tag className={cn(variantStyles[variant], 'text-white', className)}>
+    <Tag className={cn(variantStyles[variant], 'text-stone-900', className)}>
       {children}
     </Tag>
   );

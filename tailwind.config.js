@@ -23,11 +23,11 @@ module.exports = {
           950: '#3a2007'
         },
         surface: {
-          base: '#0c0d09',
-          card: '#14150e',
-          'card-hover': '#1b1d14',
-          border: '#272a1a',
-          'border-focus': '#facc15'
+          base: '#ffffff',
+          card: '#ffffff',
+          'card-hover': '#fefce8',
+          border: '#fef08a',
+          'border-focus': '#eab308'
         }
       }
     },

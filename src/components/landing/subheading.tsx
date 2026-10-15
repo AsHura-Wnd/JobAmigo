@@ -11,9 +11,9 @@ export default function SubHeading({
   className?: string;
 }) {
   const variantStyles = {
-    big: 'text-base sm:text-lg text-slate-300 leading-relaxed',
-    medium: 'text-sm sm:text-base text-slate-400 leading-relaxed',
-    small: 'text-xs sm:text-sm text-slate-500 leading-normal',
+    big: 'text-base sm:text-lg text-stone-600 leading-relaxed',
+    medium: 'text-sm sm:text-base text-stone-600 leading-relaxed',
+    small: 'text-xs sm:text-sm text-stone-500 leading-normal',
   };
 
   return (

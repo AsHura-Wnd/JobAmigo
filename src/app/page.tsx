@@ -27,6 +27,12 @@ import {
   Palette
 } from 'lucide-react';
 import { JobListing, SearchPreferences, SeniorityLevel } from '@/lib/types';
+import LandingNavbar from '@/components/landing/navbar';
+import LandingHero from '@/components/landing/hero';
+import LandingStats from '@/components/landing/stats';
+import WorkflowBento from '@/components/landing/workflow-bento';
+import LivePreview from '@/components/landing/live-preview';
+import LandingFooter from '@/components/landing/footer';
 
 export default function LaunchRadarDashboard() {
   const [role, setRole] = useState('Software Engineer Intern');
@@ -124,109 +130,50 @@ export default function LaunchRadarDashboard() {
 
   return (
     <div className="min-h-screen text-slate-100 flex flex-col">
-      {/* Top Navbar */}
-      <header className="border-b border-slate-800/80 bg-slate-950/60 backdrop-blur-md sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-              <Radar className="w-5 h-5 text-slate-950 stroke-[2.5]" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400">
-                  LaunchRadar
-                </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300">
-                  TinyFish Engine
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
-                TinyFish × TechnoJam Challenge • Galgotias University
-              </p>
-            </div>
-          </div>
+      {/* Landing Navbar */}
+      <LandingNavbar
+        onOpenDiagnostics={() => setShowDiagnostics(true)}
+        onOpenKeyModal={() => setShowKeyModal(true)}
+        hasApiKey={Boolean(apiKey)}
+      />
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setShowDiagnostics(!showDiagnostics)}
-              className="text-xs px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 hover:bg-slate-800 text-slate-300 flex items-center gap-1.5 transition-all"
-            >
-              <Cpu className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Diagnostics</span>
-            </button>
+      {/* Hero Section */}
+      <LandingHero
+        onFindOpportunities={() => {
+          const el = document.getElementById('search-console');
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      />
 
-            <button
-              onClick={() => setShowKeyModal(true)}
-              className={`text-xs px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 font-medium border transition-all ${
-                apiKey
-                  ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-300 shadow-sm shadow-emerald-950'
-                  : 'border-cyan-500/50 bg-cyan-950/40 text-cyan-300 hover:bg-cyan-900/50'
-              }`}
-            >
-              <Key className="w-3.5 h-3.5" />
-              <span>{apiKey ? 'API Key Active' : 'Configure TinyFish Key'}</span>
-            </button>
+      {/* Key Metrics */}
+      <LandingStats />
+
+      {/* Workflow & Architecture Bento */}
+      <WorkflowBento />
+
+      {/* Live Backend Results Stream Preview */}
+      <LivePreview
+        onSelectRole={(r) => {
+          setRole(r);
+          const el = document.getElementById('search-console');
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      />
+
+      {/* Interactive Search Console Section */}
+      <main id="search-console" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1 w-full space-y-8 scroll-mt-20">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-semibold">
+            <Radar className="w-3.5 h-3.5" />
+            <span>Interactive Radar Search Console</span>
           </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Launch Your Custom Search
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400">
+            Configure your target domain, location, and required tech skills to dispatch TinyFish Search, Agent, and Fetch across authentic company career portals.
+          </p>
         </div>
-      </header>
-
-      {/* Main Container */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-8">
-        
-        {/* Hero Banner */}
-        <section className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/90 via-slate-950 to-slate-900/80 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
-          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Real-Time Web Retrieval with 3 TinyFish Primitives</span>
-            </div>
-            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white mb-2">
-              Discover verified student jobs & internships with autonomous precision.
-            </h1>
-            <p className="text-sm sm:text-base text-slate-400">
-              LaunchRadar queries authentic career boards (Microsoft Careers, Amazon Jobs, Wellfound, Greenhouse) via 
-              <span className="text-cyan-300 font-medium"> TinyFish Search</span>, inspects application pages using 
-              <span className="text-emerald-300 font-medium"> TinyFish Fetch</span>, and automates multi-step career navigation via 
-              <span className="text-purple-300 font-medium"> TinyFish Agent</span>.
-            </p>
-          </div>
-
-          {/* Quick Capability Matrix */}
-          <div className="mt-6 pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                <Search className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="font-semibold text-slate-200">1. TinyFish Search</div>
-                <div className="text-slate-400 text-[11px]">Rank-stable discovery across live portals</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                <Globe className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="font-semibold text-slate-200">2. TinyFish Fetch</div>
-                <div className="text-slate-400 text-[11px]">Headless Chromium DOM & spec extraction</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
-                <Cpu className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="font-semibold text-slate-200">3. TinyFish Agent</div>
-                <div className="text-slate-400 text-[11px]">Autonomous goal-based career board runner</div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Preferences & Search Bar */}
         <section className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 backdrop-blur-xl shadow-xl space-y-6">
@@ -836,23 +783,8 @@ export default function LaunchRadarDashboard() {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950/80 py-6 mt-auto">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-slate-400">LaunchRadar</span>
-            <span>—</span>
-            <span>Built for TinyFish × TechnoJam Challenge @ Galgotias University</span>
-          </div>
-          <div className="flex items-center gap-4 text-[11px]">
-            <span>TinyFish Search</span>
-            <span>•</span>
-            <span>TinyFish Fetch</span>
-            <span>•</span>
-            <span>TinyFish Agent</span>
-          </div>
-        </div>
-      </footer>
+      {/* Landing Footer */}
+      <LandingFooter />
     </div>
   );
 }
